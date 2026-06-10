@@ -53,10 +53,6 @@ export const availableLangs = {
 
 // Each client language needs an entry in the rest of the variables below
 
-/* These strings set the i18next language. It needs to be the two character
- * string for the language to take advantage of available functionality.
- * Use a 639-1 code here https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
- */
 export const i18nextCodes = {
   [Languages.English]: 'en',
   [Languages.Espanol]: 'es',
@@ -67,7 +63,7 @@ export const i18nextCodes = {
   [Languages.Ukrainian]: 'uk',
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
-  [Languages.Swahili]: 'sw',
+  [Languages.Swahili]: 'sr',
   [Languages.Korean]: 'ko'
 };
 
@@ -82,14 +78,11 @@ export const LangNames: { [key: string]: string } = {
   [Languages.Ukrainian]: 'Українська',
   [Languages.Japanese]: '日本語',
   [Languages.German]: 'Deutsch',
-  [Languages.Swahili]: 'Swahili',
+  [Languages.Swahili]: 'Srpski',
   [Languages.Korean]: '한국어'
 };
 
-/* These are for formatting dates and numbers. Used with JS .toLocaleString().
- * There's an example in profile/components/Camper.js
- * List: https://github.com/unicode-cldr/cldr-dates-modern/tree/master/main
- */
+/* These are for formatting dates and numbers. Used with JS .toLocaleString(). */
 export const LangCodes = {
   [Languages.English]: 'en-US',
   [Languages.Espanol]: 'es-419',
@@ -100,7 +93,7 @@ export const LangCodes = {
   [Languages.Ukrainian]: 'uk',
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
-  [Languages.Swahili]: 'sw',
+  [Languages.Swahili]: 'sr-RS',
   [Languages.Korean]: 'ko'
 };
 
