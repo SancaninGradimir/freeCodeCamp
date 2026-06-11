@@ -4,11 +4,7 @@ import path from 'path';
 const MODEL = 'gemma4:latest';
 
 const DIRS = [
-  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/workshop-calorie-counter',
-  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/workshop-castle',
-  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/workshop-cat-painting',
-  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/workshop-cat-photo-app',
-  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/workshop-city-skyline'
+'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/quiz-asynchronous-javascript'
 ];
 
 // ======================================
