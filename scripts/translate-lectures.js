@@ -1,11 +1,80 @@
 import fs from 'fs';
 import path from 'path';
 
-const MODEL = 'qwen3:32b';
+const MODEL = 'gemma4:latest';
 
 const DIRS = [
-  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-accessible-media-elements'
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-audio-and-video',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-audio-and-video-elements',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-backgrounds-and-borders',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-client-side-storage-and-crud-operations',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-code-editors-and-ides',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-code-quality-and-execution-concepts',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-code-reviews-branching-deployment-and-ci-cd',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-colors-in-css',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-common-array-methods',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-common-data-structures',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-common-data-structures-js',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-comparison-and-boolean-operators',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-conditional-logic-and-math-methods',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-css-flexbox',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-css-fonts',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-css-grid',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-css-libraries-and-frameworks',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-css-transforms-overflow-and-filters',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-css-variables',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-data-fetching-and-memoization-in-react',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-data-in-react',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-data-types',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-dates',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-dictionaries-and-sets',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-express',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-file-systems',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-forms',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-forms-in-react',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-functions',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-generics-and-type-narrowing',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-higher-order-functions-and-callbacks',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-html-tools',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-images-and-svgs',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-json',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-links',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-loops',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-loops-and-sequences',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-maps-and-sets',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-media',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-modules',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-nano',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-node-core-modules',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-nodejs-and-event-driven-architecture',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-npm-scripts',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-numbers-and-arithmetic-operators',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-numbers-and-common-number-methods',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-operator-behavior',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-optional-chaining-and-object-destructuring',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-pseudo-classes-and-pseudo-elements-in-css',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-regular-expressions',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-relational-databases',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-relative-and-absolute-units',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-specialized-semantic-elements',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-sql',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-state-and-responding-to-events-in-react',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-string-character-methods',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-string-formatting-methods',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-string-modification-methods',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-string-search-and-slice-methods',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-strings-in-javascript',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-tables',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-text-and-time-semantic-elements',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-the-arguments-object-and-rest-parameters',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-the-dom-click-events-and-web-apis',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-types-and-objects',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-typescript-configuration-files',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lecture-working-with-unary-and-bitwise-operators'
 ];
+
+
+
 
 const FORCE_RESTORE_FROM_BAK = true;
 let translatedFiles = 0;
@@ -176,12 +245,120 @@ function containsEnglish(text) {
     'will',
     'should',
     'could',
-    'would'
+    'would',
+    'but',
+    'not',
+    'are',
+    'was',
+    'been',
+    'into',
+    'well',
+    'then',
+    'than',
+    'just',
+    'about',
+    'makes',
+    'make',
+    'here',
+    'there',
+    'their',
+    'your',
+    'some',
+    'each',
+    'which',
+    'while',
+    'where',
+    'still',
+    'even',
+    'because',
+    'after',
+    'before',
+    'between',
+    'through',
+    'during',
+    'without',
+    'always',
+    'these',
+    'those',
+    'being',
+    'done',
+    'using',
+    'first',
+    'last',
+    'over',
+    'under',
+    'such',
+    'very',
+    'many',
+    'much',
+    'both',
+    'most',
+    'other',
+    'every',
+    'too',
+    'its',
+    'has',
+    'had',
+    'did',
+    'get',
+    'got',
+    'see',
+    'say',
+    'use',
+    'may'
   ];
 
-  return englishMarkers.some(word =>
-    new RegExp(`\\b${word}\\b`, 'i').test(lower)
+  // Remove known non-translatable content before checking:
+  // - Inline code (__INLINE_CODE_...)
+  // - Code block tokens
+  // - HTML tag tokens
+  // - URLs and markdown links
+  const cleaned = text
+    .replace(/__INLINE_CODE_\d+__/g, '')
+    .replace(/__CODE_BLOCK_\d+__/g, '')
+    .replace(/__HTML_TAG_\d+__/g, '')
+    .replace(/__FCC_MARKER_\d+__/g, '')
+    .replace(/__SCRIPT_BLOCK_\d+__/g, '')
+    .replace(/__STYLE_BLOCK_\d+__/g, '')
+    .replace(/__INTERACTIVE_EDITOR_\d+__/g, '')
+    .replace(/https?:\/\/[^\s]+/g, '')
+    .replace(/`[^`]+`/g, '');
+
+  const cleanedLower = cleaned.toLowerCase();
+
+  // Check for common English words in the cleaned text
+  const hasMarker = englishMarkers.some(word =>
+    new RegExp(`\\b${word}\\b`, 'i').test(cleanedLower)
   );
+  if (hasMarker) {
+    return true;
+  }
+
+  // Check for sentences with mostly ASCII letters (indicating untranslated English)
+  const lines = cleaned.split('\n');
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.length < 25) continue; // Increased minimum to avoid false positives on short lines
+    if (/^[#\-\*>\s`]/.test(trimmed)) continue;
+    if (/[čćžšđČĆŽŠĐ]/.test(trimmed)) continue; // Has Serbian chars, probably translated
+
+    // Skip lines that are primarily list items with inline code or quotes
+    if (/^[""'""'].*[""'""']/.test(trimmed)) continue;
+
+    const words = trimmed.split(/\s+/);
+    let englishWordCount = 0;
+    for (const word of words) {
+      const clean = word.replace(/[^a-zA-Z]/g, '');
+      if (clean.length >= 4 && /[aeiou]/i.test(clean)) {
+        englishWordCount++;
+      }
+    }
+    if (words.length >= 6 && englishWordCount >= words.length * 0.6) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 async function replaceAsync(string, regex, callback) {
@@ -471,25 +648,33 @@ function restoreHtmlTags(text, store) {
 }
 
 async function translateParagraphs(body) {
+  // Preserve the exact blank line structure by tracking separators
   const codeProtected = protectCodeBlocks(body);
-  const paragraphs = codeProtected.text.split(/\n\n+/);
-  const translatedParagraphs = [];
+  
+  // Instead of splitting on blank lines, split while preserving the blank line count
+  // Use a regex that captures the paragraph content and the blank lines between them
+  const parts = codeProtected.text.split(/(\n{2,})/);
+  const translatedParts = [];
 
-  for (const paragraph of paragraphs) {
-    const trimmed = paragraph.trim();
-
-    if (!trimmed) {
-      translatedParagraphs.push(paragraph);
-      continue;
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i];
+    
+    // Even-indexed parts are text, odd-indexed parts are blank line separators
+    if (i % 2 === 0) {
+      const trimmed = part.trim();
+      if (trimmed) {
+        translatedParts.push(await safeTranslate(part));
+      } else {
+        translatedParts.push(part);
+      }
+    } else {
+      // Preserve blank line separators exactly
+      translatedParts.push(part);
     }
-
-    translatedParagraphs.push(
-      await safeTranslate(paragraph)
-    );
   }
 
   return restoreCodeBlocks(
-    translatedParagraphs.join('\n\n'),
+    translatedParts.join(''),
     codeProtected.store
   );
 }
@@ -499,13 +684,8 @@ async function translateParagraphs(body) {
 // ======================================
 
 async function safeTranslate(text) {
-  console.log(
-    'SAFE TRANSLATE CALLED'
-  );
-
-  console.log(
-    text.substring(0, 150)
-  );
+  console.log('SAFE TRANSLATE CALLED');
+  console.log(text.substring(0, 150));
 
   const beforeCodeBlocks =
     (text.match(/```/g) || []).length;
@@ -513,67 +693,62 @@ async function safeTranslate(text) {
     (text.match(/:::interactive_editor/g) || []).length;
 
   const fccProtected = protectFCCMarkers(text);
-  // Protect code blocks before HTML so HTML inside code examples is not tokenized.
-  const codeProtected = protectCodeBlocks(
-    fccProtected.text
-  );
-  // Protect interactive editors before HTML as well.
-  const interactiveProtected = protectInteractiveEditors(
-    codeProtected.text
-  );
-  const inlineProtected = protectInlineCode(
-    interactiveProtected.text
-  );
-  const styleProtected = protectStyleBlocks(
-    inlineProtected.text
-  );
-  const scriptProtected = protectScriptBlocks(
-    styleProtected.text
-  );
+  const codeProtected = protectCodeBlocks(fccProtected.text);
+  const interactiveProtected = protectInteractiveEditors(codeProtected.text);
+  const inlineProtected = protectInlineCode(interactiveProtected.text);
+  const styleProtected = protectStyleBlocks(inlineProtected.text);
+  const scriptProtected = protectScriptBlocks(styleProtected.text);
+  const htmlProtected = protectHtmlTags(scriptProtected.text);
 
-  let translated = await translateText(
-    inlineProtected.text
-  );
+  // Skip translation for paragraphs that contain only non-translatable content
+  const textForTranslation = htmlProtected.text.trim();
+  if (
+    !textForTranslation ||
+    textForTranslation === ':::' ||
+    /^:::[\s]*$/.test(textForTranslation) ||
+    /^__CODE_BLOCK_\d+__$/.test(textForTranslation) ||
+    /^__HTML_TAG_\d+__$/.test(textForTranslation) ||
+    /^__INTERACTIVE_EDITOR_\d+__$/.test(textForTranslation) ||
+    /^__FCC_MARKER_\d+__$/.test(textForTranslation) ||
+    /^__INLINE_CODE_\d+__$/.test(textForTranslation)
+  ) {
+    console.log('SKIPPING NON-TRANSLATABLE PARAGRAPH');
+    return text;
+  }
 
-  console.log(
-    'MODEL RESPONSE PREVIEW:'
-  );
+  // Send the FULLY protected text to the model
+  let translated = await translateText(htmlProtected.text);
 
-  console.log(
-    translated.substring(0, 500)
-  );
+  console.log('MODEL RESPONSE PREVIEW:');
+  console.log(translated.substring(0, 500));
 
   if (
     translated.includes('Translate English') ||
     translated.includes('IMPORTANT:') ||
     translated.includes('TEXT:')
   ) {
-    throw new Error('Model returned prompt instead of translation');
+    console.warn('Model returned prompt instead of translation - returning original text');
+    return text;
   }
 
-  const inputParagraphs = inlineProtected.text
+  const inputParagraphs = htmlProtected.text
     .split(/\n\s*\n/)
     .filter(Boolean).length;
   const outputParagraphs = translated
     .split(/\n\s*\n/)
     .filter(Boolean).length;
 
-  console.log({
-    inputParagraphs,
-    outputParagraphs
-  });
+  console.log({ inputParagraphs, outputParagraphs });
 
   if (
     inputParagraphs > 0 &&
     outputParagraphs < inputParagraphs * 0.7
   ) {
     retriedBlocks++;
-    console.warn(
-      'Partial translation detected, retrying with stronger prompt'
-    );
+    console.warn('Partial translation detected, retrying with stronger prompt');
 
     translated = await translateText(
-      inlineProtected.text,
+      htmlProtected.text,
       `Translate EVERYTHING into Serbian (sr-RS).
 
 Do NOT leave any English sentences.
@@ -590,22 +765,14 @@ Rules:
 - Return ONLY Serbian text`
     );
 
-    console.log(
-      'MODEL RESPONSE PREVIEW:'
-    );
-
-    console.log(
-      translated.substring(0, 500)
-    );
+    console.log('MODEL RESPONSE PREVIEW:');
+    console.log(translated.substring(0, 500));
 
     const retryOutputParagraphs = translated
       .split(/\n\s*\n/)
       .filter(Boolean).length;
 
-    console.log({
-      inputParagraphs,
-      retryOutputParagraphs
-    });
+    console.log({ inputParagraphs, retryOutputParagraphs });
 
     if (retryOutputParagraphs < inputParagraphs * 0.7) {
       failedBlocks++;
@@ -615,29 +782,60 @@ Rules:
 
   if (containsEnglish(translated)) {
     console.warn('Partial English detected');
+
+    if (inputParagraphs > 0) {
+      retriedBlocks++;
+      console.warn('Retrying with strongest prompt due to English content');
+
+      try {
+        const retryTranslation = await translateText(
+          htmlProtected.text,
+          `You are a professional translator. Translate the following text into Serbian (sr-RS).
+
+CRITICAL INSTRUCTIONS:
+- Translate EVERY word of English text into Serbian.
+- Do NOT leave ANY English text.
+- Preserve all formatting and structure exactly.
+- Return ONLY the translated text in Serbian.
+
+TEXT TO TRANSLATE:`
+        );
+
+        console.log('Second retry preview:', retryTranslation.substring(0, 500));
+
+        // Only use retry if it doesn't echo the prompt back
+        if (
+          retryTranslation &&
+          !retryTranslation.includes('Translate EVERY') &&
+          !retryTranslation.includes('CRITICAL:') &&
+          !retryTranslation.includes('TEXT TO TRANSLATE:')
+        ) {
+          translated = retryTranslation;
+        } else {
+          console.warn('Retry echoed prompt back, keeping original translation');
+        }
+      } catch (retryErr) {
+        console.warn('Retry translation failed, keeping original: ' + retryErr.message);
+      }
+    }
   }
 
+  // If final translation still has prompt text, use original input as fallback (better unfixed than crash)
   if (
     /TEXT:/i.test(translated) ||
     /IMPORTANT:/i.test(translated)
   ) {
-    throw new Error(
-      'Model returned prompt instead of translation'
-    );
+    console.warn('Model returned prompt instead of translation - using original input as fallback');
+    return text;
   }
 
-  const originalTrimmed = inlineProtected.text.trim();
+  const originalTrimmed = htmlProtected.text.trim();
   const translatedTrimmed = translated.trim();
 
   const originalNormalized =
-    originalTrimmed
-      .replace(/\s+/g, ' ')
-      .toLowerCase();
-
+    originalTrimmed.replace(/\s+/g, ' ').toLowerCase();
   const translatedNormalized =
-    translatedTrimmed
-      .replace(/\s+/g, ' ')
-      .toLowerCase();
+    translatedTrimmed.replace(/\s+/g, ' ').toLowerCase();
 
   if (
     originalTrimmed.length > 50 &&
@@ -646,7 +844,7 @@ Rules:
     retriedBlocks++;
 
     translated = await translateText(
-      inlineProtected.text,
+      htmlProtected.text,
       `Translate ALL English natural language into Serbian.
 
 Do NOT leave any English sentences unchanged.
@@ -662,36 +860,20 @@ Return only Serbian text.
 `
     );
 
-    if (inlineProtected.text.trim() === translated.trim()) {
+    if (htmlProtected.text.trim() === translated.trim()) {
       failedBlocks++;
       throw new Error('Translation failed: content remained in English');
     }
   }
 
-  translated = restoreScriptBlocks(
-    translated,
-    scriptProtected.store
-  );
-  translated = restoreStyleBlocks(
-    translated,
-    styleProtected.store
-  );
-  translated = restoreInlineCode(
-    translated,
-    inlineProtected.store
-  );
-  translated = restoreInteractiveEditors(
-    translated,
-    interactiveProtected.store
-  );
-  translated = restoreCodeBlocks(
-    translated,
-    codeProtected.store
-  );
-  translated = restoreFCCMarkers(
-    translated,
-    fccProtected.markers
-  );
+  // Restore in reverse order of protection
+  translated = restoreHtmlTags(translated, htmlProtected.store);
+  translated = restoreScriptBlocks(translated, scriptProtected.store);
+  translated = restoreStyleBlocks(translated, styleProtected.store);
+  translated = restoreInlineCode(translated, inlineProtected.store);
+  translated = restoreInteractiveEditors(translated, interactiveProtected.store);
+  translated = restoreCodeBlocks(translated, codeProtected.store);
+  translated = restoreFCCMarkers(translated, fccProtected.markers);
 
   if (translated.trim() !== text.trim()) {
     translatedBlocks++;
@@ -703,15 +885,11 @@ Return only Serbian text.
     (translated.match(/:::interactive_editor/g) || []).length;
 
   if (beforeCodeBlocks !== afterCodeBlocks) {
-    throw new Error(
-      'Code block count changed during translation'
-    );
+    throw new Error('Code block count changed during translation');
   }
 
   if (beforeEditorOpeners !== afterEditorOpeners) {
-    throw new Error(
-      'Interactive editor count changed during translation'
-    );
+    throw new Error('Interactive editor count changed during translation');
   }
 
   return translated;
@@ -731,16 +909,13 @@ async function translateTitle(content) {
 
   console.log(`Title translated: "${translatedTitle}"`);
   console.log(
-    `Title length: before=${originalTitle.length}, after=${(
-      translatedTitle || ''
-    ).length}`
+    `Title length: before=${originalTitle.length}, after=${(translatedTitle || '').length}`
   );
 
-  // Validation: reject obviously-bad translations
   const invalidChecks = [
     /TEXT:/i,
     /IMPORTANT:/i,
-    /# --/ // any FCC marker leakage
+    /# --/
   ];
 
   const hasInvalid = invalidChecks.some(rx => rx.test(translatedTitle || ''));
@@ -751,73 +926,23 @@ async function translateTitle(content) {
     return content;
   }
 
-  return content.replace(
-    match[0],
-    `title: ${translatedTitle}`
-  );
+  return content.replace(match[0], `title: ${translatedTitle}`);
 }
 
 async function translateIntroSection(content) {
   console.log('ENTER translateIntroSection');
 
-  const matches = content.match(
-    /(^# --interactive--\n)([\s\S]*?)(?=^# --questions--|$)/gm
-  );
-
-  console.log('MATCHES:', matches?.length || 0);
-
-  console.log(
-    'ENTERED translateIntroSection'
-  );
-
-  console.log(
-    JSON.stringify(
-      content.slice(
-        content.indexOf('# --interactive--'),
-        content.indexOf('# --interactive--') + 200
-      )
-    )
-  );
-
   // Translate either the interactive or description intro section.
   if (content.includes('# --interactive--')) {
-    console.log(
-      'INTERACTIVE SECTION DETECTED'
-    );
+    console.log('INTERACTIVE SECTION DETECTED');
 
-    const testMatch =
-      content.match(
-        /(^# --interactive--\s*\n)([\s\S]*?)(?=^# --questions--|$)/gm
-      );
-
-    console.log(
-      'INTERACTIVE MATCH:',
-      !!testMatch
-    );
-
-    if (testMatch) {
-      console.log(
-        'MATCH LENGTH:',
-        testMatch[0].length
-      );
-    }
-
-    const regex = /(^# --interactive--\s*\n)([\s\S]*?)(?=^# --questions--|$)/gm;
-
-    console.log(
-      'USING INTERACTIVE REGEX'
-    );
+    // IMPORTANT: Use \n at end of lookahead to properly anchor. 
+    // Without \n, the $ in multiline mode matches every line end causing lazy match to stop immediately.
+    const regex = /(^# --interactive--\s*\n)([\s\S]*?)(?=\n# --questions--)/gm;
 
     return replaceAsync(content, regex, async (_match, prefix, body) => {
-      console.log(
-        'BODY LENGTH:',
-        body.length
-      );
-
-      console.log(
-        'BODY PREVIEW:',
-        body.substring(0, 150)
-      );
+      console.log('BODY LENGTH:', body.length);
+      console.log('BODY PREVIEW:', body.substring(0, 150));
       const translatedBody = await translateParagraphs(body);
 
       if (body.trim().length > 80 && body.trim() === (translatedBody || '').trim()) {
@@ -829,9 +954,10 @@ async function translateIntroSection(content) {
   }
 
   // Fallback: description
-  const regex = /(^# --description--\s*\n)([\s\S]*?)(?=^# --questions--|$)/gm;
+  const regex = /(^# --description--\s*\n)([\s\S]*?)(?=\n# --questions--)/gm;
 
   return replaceAsync(content, regex, async (_match, prefix, body) => {
+    console.log('DESCRIPTION BODY LENGTH:', body.length);
     const codeProtected = protectCodeBlocks(body);
     let translatedBody = await translateParagraphs(body);
 
@@ -855,6 +981,25 @@ Rules:
       translatedBody = restoreCodeBlocks(retry, codeProtected.store);
     }
 
+    if (containsEnglish(translatedBody) && body.trim() !== (translatedBody || '').trim()) {
+      console.warn('Second retry for description block');
+      const retry2 = await translateText(
+        codeProtected.text,
+        `You are a professional Serbian translator. Translate the following English text to Serbian (sr-RS).
+
+CRITICAL: Every single English word must be translated. No English text should remain.
+
+Rules:
+- Translate all natural language text into Serbian
+- Preserve markdown formatting exactly
+- Preserve code blocks exactly
+- Preserve HTML exactly
+- Preserve FCC markers exactly
+- Return ONLY the translated Serbian text`
+      );
+      translatedBody = restoreCodeBlocks(retry2, codeProtected.store);
+    }
+
     if (body.trim().length > 80 && body.trim() === (translatedBody || '').trim()) {
       console.warn('Warning: description block unchanged after translation');
     }
@@ -863,14 +1008,58 @@ Rules:
   });
 }
 
+// ======================================
+// QUESTION SECTION
+// ======================================
+
+async function translateQuestionSection(content) {
+  console.log('ENTER translateQuestionSection');
+
+  // Process every # --questions-- block
+  // Capture everything between # --questions-- (incl. content) and the next # --questions-- marker.
+  // Using greedy [\s\S]* to capture everything, then lookahead stops at the next section marker.
+  const questionSectionRegex = /(# --questions--\s*?\n)([\s\S]*?)(?=\n# --questions--|$)/g;
+
+  return replaceAsync(
+    content,
+    questionSectionRegex,
+    async (_match, prefix, body) => {
+      console.log('QUESTION BLOCK FOUND');
+      console.log(body.substring(0, 150));
+      let questionSection = body;
+
+      // Translate each section type - order matters to avoid nested matching
+      questionSection = await translateSectionBlocks(
+        questionSection,
+        '## --text--'
+      );
+
+      questionSection = await translateSectionBlocks(
+        questionSection,
+        '## --answers--'
+      );
+
+      questionSection = await translateSectionBlocks(
+        questionSection,
+        '### --feedback--'
+      );
+
+      return `${prefix}${questionSection}`;
+    }
+  );
+}
+
 async function translateSectionBlocks(
   content,
-  marker,
-  nextMarkersPattern
+  marker
 ) {
+  // Match the marker, then capture everything until the next marker or section boundary
+  // After the marker line, capture text until we hit another marker line (## or ### or ---)
+  // In 'g' mode (single-line mode), $ matches end-of-string only.
+  const escapedMarker = escapeRegExp(marker);
   const regex = new RegExp(
-    `(${escapeRegExp(marker)}\\s*\\n)([\\s\\S]*?)(?=(?:${nextMarkersPattern})|$)`,
-    'gm'
+    `(${escapedMarker}\\s*\\n)([\\s\\S]*?)(?=\\n(?:##|###|---)|\$)`,
+    'g'
   );
 
   return replaceAsync(
@@ -879,40 +1068,16 @@ async function translateSectionBlocks(
     async (_match, prefix, body) => {
       let translatedBody = await translateParagraphs(body);
 
-      if (
-        containsEnglish(translatedBody) ||
-        body.trim() === (translatedBody || '').trim()
-      ) {
-        console.warn(
-          `Retrying section '${marker}' with stronger prompt`
-        );
-
-        translatedBody = await translateParagraphs(body);
-      }
-
-      if (/[a-zA-Z]{4,}/.test(translatedBody)) {
-        const codeProtected = protectCodeBlocks(body);
+      if (body.trim().length > 50 && body.trim() === (translatedBody || '').trim()) {
+        console.warn(`Retrying section '${marker}' - unchanged`);
+        // Try translating the entire block at once with stronger prompt
         const retry = await translateText(
-          codeProtected.text,
-          'Translate ALL text into Serbian. No English allowed.'
+          body,
+          `Translate ALL English text into Serbian (sr-RS). Do NOT leave ANY English. Return ONLY Serbian text.`
         );
-
-        translatedBody = restoreCodeBlocks(retry, codeProtected.store);
-      }
-
-      try {
-        const THRESHOLD = 60;
-
-        if (
-          body.trim().length > THRESHOLD &&
-          body.trim() === (translatedBody || '').trim()
-        ) {
-          console.warn(
-            `Warning: section '${marker}' unchanged after translation (${body.trim().length} chars)`
-          );
+        if (retry && !retry.includes('Translate ALL') && retry.trim() !== body.trim()) {
+          translatedBody = retry;
         }
-      } catch (err) {
-        // non-fatal
       }
 
       return `${prefix}${translatedBody}`;
@@ -920,74 +1085,12 @@ async function translateSectionBlocks(
   );
 }
 
-async function translateQuestionSection(content) {
-  console.log('ENTER translateQuestionSection');
-
-  const matches = content.match(
-    /(# --questions--\s*\n)([\s\S]*?)(?=(?:^# --questions--)|$)/gm
-  );
-
-  console.log(
-    'QUESTION MATCHES:',
-    matches?.length || 0
-  );
-
-  // Process every # --questions-- block, not just the first one.
-  const questionSectionRegex = /(# --questions--\s*\n)([\s\S]*?)(?=(?:^# --questions--)|$)/gm;
-
-  return replaceAsync(
-    content,
-    questionSectionRegex,
-    async (_match, prefix, body) => {
-      console.log(
-        'QUESTION BLOCK FOUND'
-      );
-
-      console.log(
-        body.substring(0, 150)
-      );
-      let questionSection = body;
-
-      questionSection = await translateSectionBlocks(
-        questionSection,
-        '## --text--',
-        '^## --answers--\s*|^### --feedback--\s*|^## --text--\s*|^## --video-solution--\s*'
-      );
-
-      questionSection = await translateSectionBlocks(
-        questionSection,
-        '## --answers--',
-        '^## --answers--\s*|^### --feedback--\s*|^## --text--\s*|^## --video-solution--\s*'
-      );
-
-      questionSection = await translateSectionBlocks(
-        questionSection,
-        '### --feedback--',
-        '^## --text--\s*|^## --video-solution--\s*'
-      );
-
-      return `${prefix}${questionSection}`;
-    }
-  );
-}
-
 async function translateLesson(content) {
   console.log('TRANSLATE LESSON START');
 
-  console.log(
-    'HAS INTERACTIVE:',
-    content.includes('# --interactive--')
-  );
-
-  console.log(
-    'HAS DESCRIPTION:',
-    content.includes('# --description--')
-  );
-
-  console.log(
-    'HAS QUESTIONS:',
-    content.includes('# --questions--')
-  );
+  console.log('HAS INTERACTIVE:', content.includes('# --interactive--'));
+  console.log('HAS DESCRIPTION:', content.includes('# --description--'));
+  console.log('HAS QUESTIONS:', content.includes('# --questions--'));
 
   content = await translateIntroSection(content);
   content = await translateQuestionSection(content);
@@ -1004,15 +1107,13 @@ async function processFile(file) {
 
     backupFile(file);
 
-    let content = fs.readFileSync(
-      file,
-      'utf8'
-    );
+    let content = fs.readFileSync(file, 'utf8');
 
     if (FORCE_RESTORE_FROM_BAK) {
       const bak = `${file}.bak`;
 
       if (fs.existsSync(bak)) {
+        console.log('Restoring from backup...');
         content = fs.readFileSync(bak, 'utf8');
       }
     }
@@ -1023,9 +1124,7 @@ async function processFile(file) {
     content = await translateLesson(content);
 
     if (containsEnglish(content)) {
-      console.warn(
-        'English content detected after translation'
-      );
+      console.warn('English content detected after translation');
     }
 
     const englishSignals = [
@@ -1040,9 +1139,7 @@ async function processFile(file) {
 
     for (const signal of englishSignals) {
       if (content.includes(signal)) {
-        console.warn(
-          `English text still present: ${signal}`
-        );
+        console.warn(`English text still present: ${signal}`);
       }
     }
 
@@ -1064,19 +1161,12 @@ async function processFile(file) {
   } catch (err) {
     if (err.message === 'Translation appears unchanged') {
       console.warn(`Skipping ${file}: ${err.message}`);
-      fs.appendFileSync(
-        'failed-translations.txt',
-        `${file}\n`,
-        'utf8'
-      );
+      fs.appendFileSync('failed-translations.txt', `${file}\n`, 'utf8');
       failedFiles++;
       return;
     }
 
-    console.error(
-      `❌ Error in ${file}`
-    );
-
+    console.error(`❌ Error in ${file}`);
     console.error(err.message);
   }
 }
@@ -1102,22 +1192,17 @@ async function main() {
     );
   }
 
-  console.log(
-    `Found ${files.length} files`
-  );
+  console.log(`Found ${files.length} files`);
 
   for (const file of files) {
     await processFile(file);
   }
 
-  console.log(
-    'DEBUG:',
-    {
-      translatedBlocks,
-      retriedBlocks,
-      failedBlocks
-    }
-  );
+  console.log('DEBUG:', {
+    translatedBlocks,
+    retriedBlocks,
+    failedBlocks
+  });
   console.log(`Translated files: ${translatedFiles}`);
   console.log(`Skipped files: ${skippedFiles}`);
   console.log(`Failed files: ${failedFiles}`);
