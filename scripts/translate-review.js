@@ -4,7 +4,67 @@ import path from 'path';
 const MODEL = 'gemma4:latest';
 
 const DIRS = [
-  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-algorithmic-thinking-by-building-a-dice-game'
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-bash-commands',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-bash-scripting',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-basic-css',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-basic-html',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-classes-and-objects',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-computer-basics',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-accessibility',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-animations',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-attribute-selectors',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-backgrounds-and-borders',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-colors',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-flexbox',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-grid',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-layout-and-effects',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-libraries-and-frameworks',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-positioning',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-pseudo-classes',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-relative-and-absolute-units',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-typography',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-css-variables',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-data-structures',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-data-structures-js',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-debugging-javascript',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-design-fundamentals',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-dictionaries-and-sets',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-dom-manipulation-and-click-events-with-javascript',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-dom-manipulation-by-building-a-rock-paper-scissors-game',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-dynamic-programming',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-dynamic-programming-js',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-error-handling',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-error-handling-in-express',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-express-middleware',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-form-validation-with-javascript',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-front-end-libraries',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-git',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-graphs-and-trees',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-graphs-and-trees-js',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-html',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-html-accessibility',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-html-tables-and-forms',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-http-and-the-web-standards-model',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-introduction-to-express',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-arrays',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-audio-and-video',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-classes',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-comparisons-and-conditionals',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-dates',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-functional-programming',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-functions',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-fundamentals',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-higher-order-functions',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-loops',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-maps-and-sets',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-math',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-objects',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-regular-expressions',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-strings',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-javascript-variables-and-data-types',
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-js-a11y'
 ];
 
 let translatedFiles = 0;
@@ -36,26 +96,24 @@ IMPORTANT:
 
 1. Translate ALL user-facing text, including:
 - title
-- # --description--
-- questions
-- answers
-- distractors
-- feedback
+- # --description-- text
+- # --hints-- text (but NOT the JavaScript code inside \`\`\`js blocks)
+- # --assignment-- text
+- any other natural language text
 
 2. Do NOT translate:
-- code blocks
+- code blocks (\`\`\`...\`\`\`)
+- inline code (\`like this\`)
 - URLs
-- API names
 - programming keywords
 - technical terms such as:
-  Promise, Fetch API, Response, Request, Callback, HTTP, API, GET, POST, PUT, DELETE, PATCH, async, await, JavaScript, Node.js
+  JavaScript, HTML, CSS, Node.js, HTTP, API, GET, POST
+- JavaScript variable names, function names, method names
+- CSS property names, selector names
 
 3. Fix grammar and spelling mistakes in the translation.
 
-4. Use natural Serbian technical terminology. Avoid literal translations such as:
-- "rezolvuje" → use "razrešava"
-- "asinhronna" → "asinhrona"
-- "asinhrokna" → "asinhrona"
+4. Use natural Serbian technical terminology.
 
 5. Keep Markdown structure unchanged.
 
@@ -115,20 +173,13 @@ function backupFile(file) {
 // ======================================
 
 function validate(content) {
-  const hasQuizzes = content.includes('# --quizzes--');
-  const hasQuiz = content.includes('## --quiz--');
-  const hasQuestion = content.includes('### --question--');
-  
-  return hasQuizzes && hasQuiz && hasQuestion;
+  const hasDescription = content.includes('# --description--');
+  return hasDescription;
 }
 
 // ======================================
 // UTILITIES
 // ======================================
-
-function escapeRegExp(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
 
 function containsEnglish(text) {
   const lower = text.toLowerCase();
@@ -145,11 +196,9 @@ function containsEnglish(text) {
     'has', 'had', 'did', 'get', 'got', 'see', 'say', 'use', 'may'
   ];
 
-  // Remove protected tokens before checking
   const cleaned = text
     .replace(/__INLINE_CODE_\d+__/g, '')
-    .replace(/__CODE_BLOCK_\d+__/g, '')
-    .replace(/__FCC_MARKER_\d+__/g, '');
+    .replace(/__CODE_BLOCK_\d+__/g, '');
 
   const cleanedLower = cleaned.toLowerCase();
 
@@ -160,7 +209,6 @@ function containsEnglish(text) {
     return true;
   }
 
-  // Check for English sentences (>60% English words, 6+ words)
   const lines = cleaned.split('\n');
   for (const line of lines) {
     const trimmed = line.trim();
@@ -202,32 +250,6 @@ async function replaceAsync(string, regex, callback) {
 // ======================================
 // PROTECTION
 // ======================================
-
-function protectFCCMarkers(text) {
-  const markers = [
-    '# --quizzes--',
-    '## --quiz--',
-    '### --question--',
-    '#### --text--',
-    '#### --distractors--',
-    '#### --answer--'
-  ];
-
-  let result = text;
-  markers.forEach((marker, index) => {
-    result = result.replaceAll(marker, `__FCC_MARKER_${index}__`);
-  });
-
-  return { text: result, markers };
-}
-
-function restoreFCCMarkers(text, markers) {
-  let result = text;
-  markers.forEach((marker, index) => {
-    result = result.replaceAll(`__FCC_MARKER_${index}__`, marker);
-  });
-  return result;
-}
 
 function protectCodeBlocks(text) {
   const store = [];
@@ -278,20 +300,16 @@ function restoreInlineCode(text, store) {
 async function safeTranslate(text) {
   if (!text || !text.trim()) return text;
 
-  console.log('SAFE TRANSLATE:', text.substring(0, 120));
+  console.log('SAFE:', text.substring(0, 120));
 
-  const fccProtected = protectFCCMarkers(text);
-  const codeProtected = protectCodeBlocks(fccProtected.text);
+  const codeProtected = protectCodeBlocks(text);
   const inlineProtected = protectInlineCode(codeProtected.text);
 
-  // Skip if only non-translatable content
   const textForTranslation = inlineProtected.text.trim();
   if (
     !textForTranslation ||
-    textForTranslation === '---' ||
     /^__CODE_BLOCK_\d+__$/.test(textForTranslation) ||
-    /^__INLINE_CODE_\d+__$/.test(textForTranslation) ||
-    /^__FCC_MARKER_\d+__$/.test(textForTranslation)
+    /^__INLINE_CODE_\d+__$/.test(textForTranslation)
   ) {
     return text;
   }
@@ -315,10 +333,8 @@ async function safeTranslate(text) {
     return text;
   }
 
-  // Restore
   translated = restoreInlineCode(translated, inlineProtected.store);
   translated = restoreCodeBlocks(translated, codeProtected.store);
-  translated = restoreFCCMarkers(translated, fccProtected.markers);
 
   if (translated.trim() !== text.trim()) {
     translatedBlocks++;
@@ -376,81 +392,55 @@ async function translateTitle(content) {
 }
 
 // ======================================
-// QUIZ SECTIONS
+// SECTIONS - translate marker content
 // ======================================
 
-async function translateQuizQuestion(content) {
-  console.log('TRANSLATING QUIZ QUESTION');
+async function translateSection(content, markerName) {
+  console.log(`TRANSLATING: ${markerName}`);
 
-  // First translate `#### --text--` (question text)
-  // Match #### --text-- then content until next #### or end
-  content = await replaceAsync(
-    content,
-    /(#### --text--\s*?\n)([\s\S]*?)(?=\n####|$)/g,
-    async (_match, prefix, body) => {
-      const translated = await translateParagraphs(body);
-      return `${prefix}${translated}`;
-    }
+  // Match marker then capture everything until the next # -- section marker (FCC marker) or end
+  // Do NOT stop at ## sub-headers inside the content
+  const escapedMarker = markerName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(
+    `(${escapedMarker}\\s*?\\n)([\\s\\S]*?)(?=\\n# --|$)`,
+    'g'
   );
-
-  // Translate `#### --distractors--` (wrong answers)
-  content = await replaceAsync(
-    content,
-    /(#### --distractors--\s*?\n)([\s\S]*?)(?=\n####|$)/g,
-    async (_match, prefix, body) => {
-      const translated = await translateParagraphs(body);
-      return `${prefix}${translated}`;
-    }
-  );
-
-  // Translate `#### --answer--` (correct answer)
-  content = await replaceAsync(
-    content,
-    /(#### --answer--\s*?\n)([\s\S]*?)(?=\n####|$|\n###)/g,
-    async (_match, prefix, body) => {
-      const translated = await translateParagraphs(body);
-      return `${prefix}${translated}`;
-    }
-  );
-
-  return content;
-}
-
-async function translateQuiz(content) {
-  console.log('TRANSLATING: # --quizzes--');
-
-  // Process each ### --question-- block
-  content = await replaceAsync(
-    content,
-    /(### --question--\s*?\n)([\s\S]*?)(?=\n### --question--|$)/g,
-    async (_match, prefix, body) => {
-      console.log('QUESTION BLOCK FOUND, length:', body.length);
-      const translated = await translateQuizQuestion(body);
-      return `${prefix}${translated}`;
-    }
-  );
-
-  return content;
-}
-
-async function translateDescription(content) {
-  console.log('TRANSLATING: # --description--');
-
-  const regex = /(# --description--\s*?\n)([\s\S]*?)(?=\n# --quizzes--)/g;
 
   return replaceAsync(
     content,
     regex,
     async (_match, prefix, body) => {
-      const translated = await translateParagraphs(body);
+      const trimmed = body.trim();
+      if (!trimmed) return _match;
+      console.log(`BODY length: ${body.length}`);
+      let translated = await translateParagraphs(body);
+      
+      // Post-process: remove hallucinated FCC markers that the model sometimes inserts
+      // The model may generate fake # --description--, # --hints--, # --assignment-- markers
+      translated = translated.replace(/^# --(?:description|hints|assignment)--\s*tekst\s*$/gm, '');
+      translated = translated.replace(/\n# --(?:description|hints|assignment)--\s*tekst\s*$/g, '');
+      translated = translated.replace(/\n# --(?:description|hints|assignment)--\s*tekst\s*\n/g, '\n\n');
+      
+      // Remove any lines that match the "Objekat Promise je temeljni koncept" pattern or similar hallucinated content
+      // These are paragraphs the model invents that don't correspond to any original text
+      
+      // Clean up excessive blank lines from removals
+      translated = translated.replace(/\n{3,}/g, '\n\n');
+      
       return `${prefix}${translated}`;
     }
   );
 }
 
-async function translateLesson(content) {
-  content = await translateDescription(content);
-  content = await translateQuiz(content);
+// ======================================
+// REVIEW PROCESSING
+// ======================================
+
+async function translateReview(content) {
+  // Translate description, hints, assignment - any # --xxx-- section
+  content = await translateSection(content, '# --description--');
+  content = await translateSection(content, '# --hints--');
+  content = await translateSection(content, '# --assignment--');
   return content;
 }
 
@@ -474,7 +464,7 @@ async function processFile(file) {
     const originalContent = content;
 
     content = await translateTitle(content);
-    content = await translateLesson(content);
+    content = await translateReview(content);
 
     if (containsEnglish(content)) {
       console.warn('English content detected after translation');

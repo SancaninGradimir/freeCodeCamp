@@ -4,7 +4,7 @@ import path from 'path';
 const MODEL = 'gemma4:latest';
 
 const DIRS = [
-  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/review-algorithmic-thinking-by-building-a-dice-game'
+  'curriculum/i18n-curriculum/curriculum/challenges/swahili/blocks/lab-world-cup-database'
 ];
 
 let translatedFiles = 0;
@@ -36,26 +36,24 @@ IMPORTANT:
 
 1. Translate ALL user-facing text, including:
 - title
-- # --description--
-- questions
-- answers
-- distractors
-- feedback
+- # --interactive-- text
+- # --description-- text
+- ## sub-headers
+- bullet points
+- any other natural language text
 
 2. Do NOT translate:
-- code blocks
+- code blocks (\`\`\`...\`\`\`)
+- inline code (\`like this\`)
 - URLs
-- API names
 - programming keywords
 - technical terms such as:
-  Promise, Fetch API, Response, Request, Callback, HTTP, API, GET, POST, PUT, DELETE, PATCH, async, await, JavaScript, Node.js
+  JavaScript, HTML, CSS, Node.js, console.log
+- JavaScript variable names, function names, method names
 
 3. Fix grammar and spelling mistakes in the translation.
 
-4. Use natural Serbian technical terminology. Avoid literal translations such as:
-- "rezolvuje" → use "razrešava"
-- "asinhronna" → "asinhrona"
-- "asinhrokna" → "asinhrona"
+4. Use natural Serbian technical terminology.
 
 5. Keep Markdown structure unchanged.
 
@@ -115,20 +113,14 @@ function backupFile(file) {
 // ======================================
 
 function validate(content) {
-  const hasQuizzes = content.includes('# --quizzes--');
-  const hasQuiz = content.includes('## --quiz--');
-  const hasQuestion = content.includes('### --question--');
-  
-  return hasQuizzes && hasQuiz && hasQuestion;
+  const hasInteractive = content.includes('# --interactive--');
+  const hasDescription = content.includes('# --description--');
+  return hasInteractive || hasDescription;
 }
 
 // ======================================
 // UTILITIES
 // ======================================
-
-function escapeRegExp(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
 
 function containsEnglish(text) {
   const lower = text.toLowerCase();
@@ -145,11 +137,10 @@ function containsEnglish(text) {
     'has', 'had', 'did', 'get', 'got', 'see', 'say', 'use', 'may'
   ];
 
-  // Remove protected tokens before checking
   const cleaned = text
     .replace(/__INLINE_CODE_\d+__/g, '')
     .replace(/__CODE_BLOCK_\d+__/g, '')
-    .replace(/__FCC_MARKER_\d+__/g, '');
+    .replace(/__INTERACTIVE_EDITOR_\d+__/g, '');
 
   const cleanedLower = cleaned.toLowerCase();
 
@@ -160,7 +151,6 @@ function containsEnglish(text) {
     return true;
   }
 
-  // Check for English sentences (>60% English words, 6+ words)
   const lines = cleaned.split('\n');
   for (const line of lines) {
     const trimmed = line.trim();
@@ -202,32 +192,6 @@ async function replaceAsync(string, regex, callback) {
 // ======================================
 // PROTECTION
 // ======================================
-
-function protectFCCMarkers(text) {
-  const markers = [
-    '# --quizzes--',
-    '## --quiz--',
-    '### --question--',
-    '#### --text--',
-    '#### --distractors--',
-    '#### --answer--'
-  ];
-
-  let result = text;
-  markers.forEach((marker, index) => {
-    result = result.replaceAll(marker, `__FCC_MARKER_${index}__`);
-  });
-
-  return { text: result, markers };
-}
-
-function restoreFCCMarkers(text, markers) {
-  let result = text;
-  markers.forEach((marker, index) => {
-    result = result.replaceAll(`__FCC_MARKER_${index}__`, marker);
-  });
-  return result;
-}
 
 function protectCodeBlocks(text) {
   const store = [];
@@ -271,6 +235,27 @@ function restoreInlineCode(text, store) {
   return result;
 }
 
+function protectInteractiveEditors(text) {
+  const store = [];
+  const protectedText = text.replace(
+    /:::interactive_editor[\s\S]*?:::/g,
+    match => {
+      const token = `__INTERACTIVE_EDITOR_${store.length}__`;
+      store.push(match);
+      return token;
+    }
+  );
+  return { text: protectedText, store };
+}
+
+function restoreInteractiveEditors(text, store) {
+  let result = text;
+  store.forEach((value, index) => {
+    result = result.replaceAll(`__INTERACTIVE_EDITOR_${index}__`, value);
+  });
+  return result;
+}
+
 // ======================================
 // SAFE TRANSLATION
 // ======================================
@@ -278,20 +263,18 @@ function restoreInlineCode(text, store) {
 async function safeTranslate(text) {
   if (!text || !text.trim()) return text;
 
-  console.log('SAFE TRANSLATE:', text.substring(0, 120));
+  console.log('SAFE:', text.substring(0, 120));
 
-  const fccProtected = protectFCCMarkers(text);
-  const codeProtected = protectCodeBlocks(fccProtected.text);
-  const inlineProtected = protectInlineCode(codeProtected.text);
+  const codeProtected = protectCodeBlocks(text);
+  const interactiveProtected = protectInteractiveEditors(codeProtected.text);
+  const inlineProtected = protectInlineCode(interactiveProtected.text);
 
-  // Skip if only non-translatable content
   const textForTranslation = inlineProtected.text.trim();
   if (
     !textForTranslation ||
-    textForTranslation === '---' ||
     /^__CODE_BLOCK_\d+__$/.test(textForTranslation) ||
     /^__INLINE_CODE_\d+__$/.test(textForTranslation) ||
-    /^__FCC_MARKER_\d+__$/.test(textForTranslation)
+    /^__INTERACTIVE_EDITOR_\d+__$/.test(textForTranslation)
   ) {
     return text;
   }
@@ -315,10 +298,9 @@ async function safeTranslate(text) {
     return text;
   }
 
-  // Restore
   translated = restoreInlineCode(translated, inlineProtected.store);
+  translated = restoreInteractiveEditors(translated, interactiveProtected.store);
   translated = restoreCodeBlocks(translated, codeProtected.store);
-  translated = restoreFCCMarkers(translated, fccProtected.markers);
 
   if (translated.trim() !== text.trim()) {
     translatedBlocks++;
@@ -333,7 +315,8 @@ async function safeTranslate(text) {
 
 async function translateParagraphs(body) {
   const codeProtected = protectCodeBlocks(body);
-  const parts = codeProtected.text.split(/(\n{2,})/);
+  const interactiveProtected = protectInteractiveEditors(codeProtected.text);
+  const parts = interactiveProtected.text.split(/(\n{2,})/);
   const translatedParts = [];
 
   for (let i = 0; i < parts.length; i++) {
@@ -350,7 +333,8 @@ async function translateParagraphs(body) {
     }
   }
 
-  return restoreCodeBlocks(translatedParts.join(''), codeProtected.store);
+  const joined = translatedParts.join('');
+  return restoreInteractiveEditors(joined, interactiveProtected.store);
 }
 
 // ======================================
@@ -376,81 +360,48 @@ async function translateTitle(content) {
 }
 
 // ======================================
-// QUIZ SECTIONS
+// SECTIONS - translate marker content
 // ======================================
 
-async function translateQuizQuestion(content) {
-  console.log('TRANSLATING QUIZ QUESTION');
+async function translateSection(content, markerName) {
+  console.log(`TRANSLATING: ${markerName}`);
 
-  // First translate `#### --text--` (question text)
-  // Match #### --text-- then content until next #### or end
-  content = await replaceAsync(
-    content,
-    /(#### --text--\s*?\n)([\s\S]*?)(?=\n####|$)/g,
-    async (_match, prefix, body) => {
-      const translated = await translateParagraphs(body);
-      return `${prefix}${translated}`;
-    }
+  const escapedMarker = markerName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(
+    `(${escapedMarker}\\s*?\\n)([\\s\\S]*?)(?=\\n# --|$)`,
+    'g'
   );
-
-  // Translate `#### --distractors--` (wrong answers)
-  content = await replaceAsync(
-    content,
-    /(#### --distractors--\s*?\n)([\s\S]*?)(?=\n####|$)/g,
-    async (_match, prefix, body) => {
-      const translated = await translateParagraphs(body);
-      return `${prefix}${translated}`;
-    }
-  );
-
-  // Translate `#### --answer--` (correct answer)
-  content = await replaceAsync(
-    content,
-    /(#### --answer--\s*?\n)([\s\S]*?)(?=\n####|$|\n###)/g,
-    async (_match, prefix, body) => {
-      const translated = await translateParagraphs(body);
-      return `${prefix}${translated}`;
-    }
-  );
-
-  return content;
-}
-
-async function translateQuiz(content) {
-  console.log('TRANSLATING: # --quizzes--');
-
-  // Process each ### --question-- block
-  content = await replaceAsync(
-    content,
-    /(### --question--\s*?\n)([\s\S]*?)(?=\n### --question--|$)/g,
-    async (_match, prefix, body) => {
-      console.log('QUESTION BLOCK FOUND, length:', body.length);
-      const translated = await translateQuizQuestion(body);
-      return `${prefix}${translated}`;
-    }
-  );
-
-  return content;
-}
-
-async function translateDescription(content) {
-  console.log('TRANSLATING: # --description--');
-
-  const regex = /(# --description--\s*?\n)([\s\S]*?)(?=\n# --quizzes--)/g;
 
   return replaceAsync(
     content,
     regex,
     async (_match, prefix, body) => {
-      const translated = await translateParagraphs(body);
+      const trimmed = body.trim();
+      if (!trimmed) return _match;
+      console.log(`BODY length: ${body.length}`);
+      let translated = await translateParagraphs(body);
+
+      // Clean up hallucinated FCC markers
+      translated = translated.replace(/^# --(?:description|hints|assignment|interactive)--\s*tekst\s*$/gm, '');
+      translated = translated.replace(/\n# --(?:description|hints|assignment|interactive)--\s*tekst\s*$/g, '');
+      translated = translated.replace(/\n# --(?:description|hints|assignment|interactive)--\s*tekst\s*\n/g, '\n\n');
+      translated = translated.replace(/\n{3,}/g, '\n\n');
+
       return `${prefix}${translated}`;
     }
   );
 }
 
-async function translateLesson(content) {
-  content = await translateDescription(content);
-  content = await translateQuiz(content);
+// ======================================
+// REVIEW PROCESSING
+// ======================================
+
+async function translateReview(content) {
+  // Translate all possible section types
+  content = await translateSection(content, '# --interactive--');
+  content = await translateSection(content, '# --description--');
+  content = await translateSection(content, '# --hints--');
+  content = await translateSection(content, '# --assignment--');
   return content;
 }
 
@@ -474,7 +425,7 @@ async function processFile(file) {
     const originalContent = content;
 
     content = await translateTitle(content);
-    content = await translateLesson(content);
+    content = await translateReview(content);
 
     if (containsEnglish(content)) {
       console.warn('English content detected after translation');
