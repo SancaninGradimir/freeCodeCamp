@@ -1,0 +1,23 @@
+{
+  "display": "display",
+  "flex": "flex",
+  "flexbox": "flexbox",
+  "container": "container",
+  "column": "column",
+  "row": "row",
+  "CSS": "CSS",
+  "HTML": "HTML",
+  "JavaScript": "JavaScript",
+  "property": "property",
+  "value": "value",
+  "element": "element",
+  "style": "style",
+  "width": "width",
+  "height": "height",
+  "background-color": "background-color",
+  "assert": "assert",
+  "const": "const",
+  "querySelector": "querySelector",
+  "getComputedStyle": "getComputedStyle",
+  "strictEqual": "strictEqual"
+}
