@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "\"Jinsi sifa ya async inavyofanya kazi ndani ya vipengele vya script, na inatofautianaje na sifa ya defer?\"", "translated_text": "Kako funkcioniše `async` atribut unutar skript elemenata, i kako se razlikuje od `defer` atributa?", "timestamp": "2026-07-07T17:08:06.789306"}

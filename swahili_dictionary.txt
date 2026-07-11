@@ -1,0 +1,1148 @@
+kuwa	26201
+katika	21310
+kipengele	17895
+challengetype	16516
+dashedname	16516
+kama	13460
+unapaswa	13049
+description	12763
+hii	12343
+sifa	11400
+thamani	11322
+kwenye	10797
+njia	10618
+kutumia	9425
+inapaswa	9117
+mfano	9087
+kitendakazi	8804
+herufi	8683
+hints	8531
+contents	8383
+ndani	8082
+zoezi	7887
+chako	7872
+wakati	7843
+nambari	7688
+step	7535
+zaidi	7072
+hatua	7039
+kazi	6982
+kinapaswa	6964
+lang	6803
+task	6670
+audio	6415
+kitu	6373
+kurudisha	6291
+hapa	6274
+chini	6236
+sehemu	6085
+kuhusu	5980
+vipengele	5576
+safu	5569
+sauti	5524
+kila	5480
+yako	5472
+ikiwa	5371
+mfuatano	5321
+instructions	5289
+kutoka	5108
+kufanya	4923
+maandishi	4901
+mara	4776
+msimbo	4715
+kigezo	4706
+kwanza	4676
+unaweza	4595
+nini	4575
+sasa	4495
+sikiliza	4404
+kawaida	4298
+neno	4277
+swali	4228
+jinsi	4208
+explanation	4091
+hili	4063
+tofauti	3995
+yake	3928
+darasa	3869
+inamaanisha	3861
+kuweka	3839
+aina	3825
+gani	3822
+vitu	3805
+jibu	3776
+hutumika	3629
+fikiria	3524
+wako	3516
+mtu	3483
+yenye	3468
+kati	3430
+maana	3356
+kuongeza	3346
+kwamba	3339
+sentensi	3280
+lakini	3202
+kuna	3128
+ambayo	3059
+sentence	3000
+muundo	2975
+sahihi	2936
+blanks	2934
+fillintheblank	2933
+hali	2931
+usemi	2920
+kichaguzi	2912
+baada	2882
+orodha	2858
+nafasi	2821
+distractors	2820
+muhimu	2813
+sababu	2786
+kuunda	2778
+maalum	2759
+should	2757
+nyingi	2750
+mwisho	2719
+kuonyesha	2681
+jambo	2638
+kupata	2636
+mradi	2508
+muda	2491
+hoja	2445
+iliyowekwa	2428
+fulani	2410
+html	2395
+msingi	2390
+hivyo	2379
+matokeo	2376
+mbili	2372
+javascript	2368
+mpya	2362
+lililopo	2354
+pili	2332
+sawa	2321
+chenye	2287
+rangi	2278
+hiyo	2248
+timu	2230
+sophie	2217
+kubwa	2205
+ongeza	2196
+zote	2181
+kitenzi	2179
+return	2173
+jina	2171
+alama	2171
+tumia	2132
+kisha	2125
+hadi	2116
+sarah	2113
+maneno	2104
+wito	2075
+ambapo	2070
+mabadiliko	2066
+kubadilisha	2060
+vigezo	2055
+taarifa	1992
+mtandao	1968
+pamoja	1938
+inaweza	1924
+mstari	1915
+ukamilishe	1902
+sana	1886
+ifuatayo	1863
+kweli	1859
+brian	1857
+name	1838
+mzunguko	1836
+kabla	1831
+interactive	1802
+mpangilio	1796
+bila	1789
+tatu	1786
+kamili	1775
+tatizo	1767
+lebo	1758
+ukurasa	1751
+nodi	1748
+weka	1736
+kuona	1727
+kumbuka	1720
+faili	1677
+awali	1673
+ndogo	1659
+mtumizi	1622
+tupu	1615
+kuandika	1607
+rahisi	1587
+hivi	1584
+hizi	1561
+inaonyesha	1552
+picha	1550
+maktaba
+ukitumia
+vivinjari
+wapi
+kufikia
+misemo
+asilimia
+mhimili
+kutambua
+inakuwezesha
+bahati
+kuzungumza
+utaona
+acha
+kuwepo
+utegemezi
+kubofya
+mviringo
+mipangilio
+usio
+kuwakilisha
+inarudisha
+tangaza
+tano
+kijenzi
+unatumia
+mduara
+kujibu
+kukamilisha
+mbadala
+dhidi
+msanidi
+hiari
+vinginevyo
+chake
+maeneo
+inawakilisha
+sifuri
+udhibiti
+salama
+kupokea
+bofya
+kuomba
+unaotumika
+ramani
+radius
+chache
+uliopita
+mwingiliano
+kudhibiti
+inahitaji
+miundo
+wengi
+nusu
+kugundua
+unaonyesha
+usisahau
+tawi
+kisanduku
+anakubaliana
+ifuatavyo
+mtiririko
+namba
+mapema
+warsha
+gharama
+ulinganifu
+mpe
+inayolingana
+hubadilisha
+tafadhali
+tendo
+kushiriki
+kutamka
+mtandaoni
+ipasavyo
+nasibu
+iliyopangwa
+yaliyomo
+utambulisho
+mwaka
+maabara
+ujuzi
+yafuatayo
+sita
+foleni
+usimamizi
+kunaweza
+hatari
+nayo
+anwani
+kusasisha
+hana
+kikubwa
+maarufu
+kifupisho
+bajeti
+utajifunza
+unavyoweza
+kupakia
+mojawapo
+tuchunguze
+ikimaanisha
+wateja
+inaonekana
+panga
+uamuzi
+mzizi
+kinachopokea
+kubaini
+yanaweza
+muonekano
+ukingo
+vinaweza
+kubadilishwa
+viwango
+mchoro
+mtazamo
+maelekezo
+kiufundi
+mafanikio
+kuzunguka
+kurasa
+taaluma
+umri
+jaribu
+iliyounganishwa
+haina
+kitambulisho
+bali
+huunda
+pikseli
+anadhani
+mhariri
+kufuata
+hasemi
+mbaya
+mchana
+miwili
+makubwa
+uzito
+kuchunguza
+ofisi
+unapotumia
+mzima
+folda
+wigo
+vichaguzi
+madhumuni
+haja
+tunaweza
+umbali
+mkusanyiko
+kujadili
+bendera
+ubunifu
+kuleta
+kisicho
+upangaji
+inayotumia
+rekodi
+madogo
+majibu
+anafanya
+pembe
+kinachotokea
+wastani
+kipindi
+furaha
+marekebisho
+ujumla
+pembetatu
+pointi
+makubaliano
+mtihani
+kuruhusu
+kupima
+imewekwa
+jukwaa
+linaelezea
+koma
+kijani
+mstatili
+miaka
+uko
+lingine
+haipaswi
+utatumia
+rejelea
+wimbo
+uelewa
+kutosha
+yuko
+yenyewe
+inaruhusu
+kurudi
+mwezi
+kusakinisha
+zinazotumika
+idara
+zijazo
+usanidi
+kupata
+pale
+mzigo
+anamaanisha
+inayoweza
+ushauri
+inarejelea
+anatoa
+muhtasari
+wewe
+progress
+polepole
+kutokana
+kitakuwa
+iliyotolewa
+rundo
+utakuwa
+unapotaka
+makundi
+isipokuwa
+ukipata
+anaomba
+kumi
+vokali
+uliotolewa
+kifupi
+kuamua
+anapaswa
+kutolewa
+kunapaswa
+mipaka
+kuacha
+dirisha
+ushirikiano
+alfabeti
+lipi
+halina
+kiko
+kikao
+asubuhi
+matriki
+mimi
+ubora
+kurejesha
+zingatia
+kupamba
+matatu
+mandhari
+inaashiria
+mapya
+bei
+chakula
+chapisha
+wawili
+buluu
+mingi
+pesa
+uwazi
+biashara
+hufanyika
+kupatikana
+kudumu
+kuja
+maktaba
+ukitumia
+wapi
+kufikia
+misemo
+asilimia
+mhimili
+kutambua
+inakuwezesha
+bahati
+kuzungumza
+utaona
+acha
+kuwepo
+utegemezi
+kubofya
+mviringo
+mipangilio
+usio
+kuwakilisha
+inarudisha
+tangaza
+tano
+kijenzi
+unatumia
+mduara
+kujibu
+kukamilisha
+mbadala
+dhidi
+msanidi
+hiari
+vinginevyo
+chake
+maeneo
+inawakilisha
+sifuri
+udhibiti
+salama
+kupokea
+bofya
+kuomba
+unaotumika
+ramani
+radius
+chache
+uliopita
+mwingiliano
+kudhibiti
+kilicho
+inahitaji
+miundo
+wengi
+nusu
+kugundua
+unaonyesha
+usisahau
+tawi
+kisanduku
+anakubaliana
+ifuatavyo
+mtiririko
+namba
+mapema
+warsha
+gharama
+ulinganifu
+mpe
+inayolingana
+hubadilisha
+tafadhali
+tendo
+kushiriki
+kutamka
+mtandaoni
+ipasavyo
+nasibu
+iliyopangwa
+yaliyomo
+utambulisho
+mwaka
+maabara
+ujuzi
+yafuatayo
+sita
+foleni
+usimamizi
+kunaweza
+hatari
+nayo
+anwani
+kusasisha
+hana
+kikubwa
+maarufu
+kifupisho
+bajeti
+utajifunza
+unavyoweza
+kupakia
+mojawapo
+tuchunguze
+ikimaanisha
+wateja
+inaonekana
+panga
+uamuzi
+mzizi
+kinachopokea
+kubaini
+yanaweza
+muonekano
+ukingo
+vinaweza
+kubadilishwa
+viwango
+mchoro
+mtazamo
+maelekezo
+kiufundi
+mafanikio
+kuzunguka
+kurasa
+taaluma
+umri
+jaribu
+iliyounganishwa
+haina
+kitambulisho
+bali
+huunda
+pikseli
+anadhani
+mhariri
+kufuata
+hasemi
+mbaya
+mchana
+miwili
+makubwa
+uzito
+kuchunguza
+ofisi
+unapotumia
+mzima
+folda
+wigo
+vichaguzi
+madhumuni
+haja
+tunaweza
+umbali
+mkusanyiko
+kujadili
+bendera
+ubunifu
+kuleta
+kisicho
+upangaji
+inayotumia
+anafanya
+wang
+kinachotokea
+wastani
+kipindi
+furaha
+marekebisho
+ujumla
+pembetatu
+makubaliano
+mtihani
+kuruhusu
+kupima
+imewekwa
+jukwaa
+linaelezea
+koma
+kijani
+mstatili
+miaka
+uko
+lingine
+haipaswi
+utatumia
+rejelea
+wimbo
+uelewa
+kutosha
+yuko
+yenyewe
+push
+seli
+vichwa
+inaruhusu
+kurudi
+mwezi
+kusakinisha
+zinazotumika
+idara
+zijazo
+usanidi
+found
+absolutely
+pale
+mzigo
+anamaanisha
+inayoweza
+ushauri
+inarejelea
+anatoa
+muhtasari
+wewe
+polepole
+kutokana
+kitakuwa
+iliyotolewa
+rundo
+utakuwa
+unapotaka
+makundi
+isipokuwa
+ukipata
+anaomba
+kumi
+vokali
+uliotolewa
+kifupi
+kuamua
+anapaswa
+kutolewa
+kunapaswa
+mipaka
+kuacha
+inavyofanya
+dirisha
+ushirikiano
+alfabeti
+lipi
+halina
+kiko
+iliyopita
+kikao
+asubuhi
+matriki
+mimi
+ubora
+kurejesha
+zingatia
+kupamba
+matatu
+mandhari
+inaashiria
+mapya
+bei
+chakula
+chapisha
+wawili
+buluu
+mingi
+pesa
+uwazi
+biashara
+hufanyika
+kupatikana
+kudumu
+kuja
+noticed
+unafanya
+kubuni
+kujali
+upite
+vitengo
+kifurushi
+yaliyo
+kando
+salamu
+jenga
+kazini
+mkuu
+ilikuwa
+kuonyeshwa
+kuendana
+wanapaswa
+kucheza
+mipango
+huna
+rudia
+kufanikisha
+unaoonyesha
+huku
+undani
+vifurushi
+huweka
+kibodi
+kufikiria
+ahadi
+hapana
+inachukua
+kilichopo
+lilijadiliwa
+vitenzi
+anapanga
+nyumbani
+mshughulikiaji
+kuchelewa
+kamilisha
+kuandaa
+imeandikwa
+mapendekezo
+kuitumia
+kiunganishi
+zinazoweza
+kudumisha
+hubadilika
+ipo
+maisha
+kuunganishwa
+safi
+kitengo
+usimbaji
+kusikiliza
+kidijitali
+futa
+hitaji
+kuchelewesha
+chumba
+huru
+kuficha
+michezo
+uwiano
+nyuzi
+kuanguka
+uchunguzi
+kuhusiana
+ifanye
+wingu
+usomaji
+kuibadilisha
+mitatu
+chapisho
+majirani
+kupungua
+leseni
+ulimi
+utafiti
+nalo
+inayobainisha
+inayofaa
+unapohitaji
+lipa
+vinavyopitishwa
+liko
+kinaelezea
+sarufi
+iliyojengwa
+tambua
+mwenye
+ulikuwa
+mlango
+vibaya
+waziwazi
+unaotumia
+ishara
+kuaminika
+washiriki
+vilivyopangwa
+samani
+usafirishaji
+unasema
+kinapokuwa
+makuu
+dakika
+kutakuwa
+lisilo
+kutekelezwa
+vifuatavyo
+wasilisha
+ukumbusho
+zinapatikana
+inategemea
+jifunze
+kuondoka
+umejifunza
+unajua
+matawi
+uvunjaji
+kusisitiza
+nyeupe
+vidakuzi
+anajua
+uchaguzi
+usakinishaji
+unazoweza
+hutuma
+ukipitisha
+tunahitaji
+matamshi
+kutathmini
+inayofanana
+fedha
+vidokezo
+hapendi
+anathibitisha
+ilivyotarajiwa
+fafanua
+tunapata
+hukuruhusu
+bure
+kupewa
+kumalizia
+wachezaji
+zilizounganishwa
+utaftaji
+ghafla
+tangu
+nazo
+taratibu
+inatumiwa
+vinavyotumika
+mbunifu
+kuinua
+hufuata
+tisa
+huanzisha
+kesho
+huja
+kusukuma
+uunganishaji
+usanifu
+uliowekwa
+jioni
+ndugu
+anatoka
+kamwe
+sarafu
+naye
+haifanyi
+endesha
+yanayotokea
+mitihani
+mikakati
+nyota
+kushangaza
+utulivu
+lililopita
+yanahusu
+unapobofya
+maingizo
+ununuzi
+nyepesi
+kilichotajwa
+linaendelea
+maonyesho
+chukua
+kumjulisha
+imekamilika
+ndizo
+kufanana
+kubadilishana
+fursa
+trafiki
+msimamizi
+kuongoza
+linarejelea
+inayojulikana
+binadamu
+uone
+inaendelea
+kituo
+fumbo
+zilizobaki
+yanayoelezea
+mnyororo
+mapendeleo
+mkato
+inaunganisha
+majadiliano
+zungusha
+angalizo
+visivyo
+ofisini
+hakina
+kinawakilisha
+kingo
+anuwai
+itifaki
+jinsia
+saidizi
+punguza
+vizingiti
+historia
+anadhihirisha
+kununua
+kuingizwa
+inajulikana
+kujitambulisha
+hajasema
+kukubali
+anaona
+kinahitaji
+magumu
+kusafiri
+mwandishi
+uleule
+huwekwa
+kuendeshwa
+kutegemea
+wajibu
+zitakuwa
+kukata
+takwimu
+kidole
+kihimarisha
+umeme
+kutokubaliana
+unavyoona
+mtoa
+elementu
+nimesikiliza
+sekta
+upakiaji
+akili
+hakuzungumzia
+inaanza
+kutaka
+kumuuliza
+ndicho
+upate
+ndio
+mshangao
+kupakua
+unayoweza
+anaposema
+anatafuta
+anarejelea
+kujiamini
+inayojibadilisha
+inavyotarajiwa
+kuhusisha
+kinaishia
+pana
+kona
+kupigia
+ndiye
+rekebisha
+puuza
+kuundwa
+zisizobadilika
+umeona
+kilichowekwa
+hutegemea
+misimbo
+utaratibu
+mafupi
+dogo
+kuunga
+ukali
+amekuwa
+alitaja
+madhara
+vituo
+kinachochukua
+kuvuta
+kufikiwa
+viashiria
+unaohitajika
+mjadala
+hasara
+daftari
+linalokagua
+vitano
+nyeti
+waendeshaji
+mfanyakazi
+kipo
+ikoni
+haikutaja
+mno
+unajumuisha
+utaanza
+ufunguzi
+mashambulizi
+kutazama
+vinavyohusiana
+terminali
+ionekane
+kutembea
+kizuizi
+unayosikia
+midogo
+usindikaji
+kuitisha
+umefanya
+shirika
+isiyobadilika
+iliyoko
+kufunika
+hubaki
+gurudumu
+mlingano
+chao
+kusanidi
+kulazimisha
+miezi
+kuendeleza
+linaloonyesha
+haipatikani
+linauliza
+wakilisha
+meza
+inapatikana
+tuanze
+inavyoshughulikia
+maadili
+inahitajika
+linganisha
+shida
+utaweka
+marekani
+unaolingana
+kuelekea
+kuzima
+unapo
+kizuri
+yaliyopangwa
+unaendelea
+mwanafunzi
+kinachukua
+upi
+kupoteza
+azimio
+fuata
+matangazo
+itatumika
+utaongeza
+mapishi
+uhuru
+fomula
+zinawakilisha
+mwalimu
+mwinuko
+cheti
+kulikuwa
+iwezekanavyo
+anapendelea
+noti
+unachotaka
+unaojumuisha
+wale
+kinachokuwezesha
+kusimama
+ndilo
+huhakikisha
+usumbufu
+aliamua
+kutembelea
+visited
+vinavyoitwa
+zinafanya
+huangalia
+kushinda
+endelea
+machache
+yalikuwa
+yawe
+kigumu
+atafanya
+tahadhari
+ukaweke
+wasimamizi
+mipya
+kufundisha
+ulinzi
+zilizotajwa
+inakuwa
+utajaribu
+iliyosasishwa
+unaochukua
+ukuaji
+vidonge
+kugawanywa
+haki
+wahusika
+umekamilika
+hajui
+wenyewe
+kutaja
+ambaye
+imetolewa
+hupata
+anazingatia
+uzinduzi
+hufanywa
+zilizowekwa
+mwanga
+kuthibitishwa
+muungano
+burudani
+kipanga
+haziwezi
+unaokagua
+msisimko

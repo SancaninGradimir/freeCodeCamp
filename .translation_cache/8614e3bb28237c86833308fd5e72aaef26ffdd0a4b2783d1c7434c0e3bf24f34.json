@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Kitendakazi cha @@INLINE_CODE_1F7ED9F3_0000@@ kinapaswa kurudisha kipengele cha juu cha stack bila kuondoa.", "translated_text": "Funkcija @@INLINE_CODE_1F7ED9F3_0000@@ bi trebalo da vrati najgornji element steka bez uklanjanja.", "timestamp": "2026-06-28T17:03:32.875544"}

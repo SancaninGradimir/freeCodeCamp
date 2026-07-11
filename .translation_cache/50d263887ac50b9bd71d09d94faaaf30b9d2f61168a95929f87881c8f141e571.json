@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Kuzuia recursion isiyo na mwisho na kuzidi kwa stack.", "translated_text": "Sprečavanje beskonačne rekurzije i prepunosti steka.", "timestamp": "2026-07-08T01:18:22.495975"}

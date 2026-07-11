@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Jinsi API ya Fetch inavyofanya kazi na njia za kawaida za HTTP na res.json()?", "translated_text": "Kako API za Fetch funkcioniše sa standardnim HTTP metodama i res.json()?", "timestamp": "2026-07-07T17:05:30.844009"}

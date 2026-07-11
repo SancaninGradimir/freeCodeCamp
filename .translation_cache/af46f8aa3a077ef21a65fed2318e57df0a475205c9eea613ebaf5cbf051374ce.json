@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "- Wezesha Usimbaji: Sanidi seva yako kutumia Gzip kupunguza ukubwa wa mafaili yanayotumwa.", "translated_text": "- Omogući kompresiju: Konfiguriši svoj server da koristi Gzip radi smanjenja veličine prenetih fajlova.", "timestamp": "2026-07-08T00:44:54.051425"}

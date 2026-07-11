@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Utafutaji wa kina kwanza daima hutumia nafasi kidogo zaidi kuliko BFS.", "translated_text": "Depth-First Search uvek koristi manje memorije/prostora od BFS.", "timestamp": "2026-07-07T21:18:13.151968"}

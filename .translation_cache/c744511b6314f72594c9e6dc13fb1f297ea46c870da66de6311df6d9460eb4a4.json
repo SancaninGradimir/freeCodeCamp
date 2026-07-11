@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Kitendakazi chako cha @@INLINE_CODE_A45F7F23_0000@@ kinapaswa kurudisha nambari kamili (integer).", "translated_text": "Tvoja funkcija za @@INLINE_CODE_A45F7F23_0000@@ treba da vrati ceo broj (integer).", "timestamp": "2026-06-30T14:19:16.569795"}

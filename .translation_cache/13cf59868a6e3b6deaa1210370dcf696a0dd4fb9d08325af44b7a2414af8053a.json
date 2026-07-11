@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Msikilizaji wako wa tukio unapaswa kuchukua @@INLINE_CODE_03D9014E_0000@@ kama wito wa kurudisha.", "translated_text": "Vaš *event listener* bi trebalo da tretira `@@INLINE_CODE_03D9014E_0000@@` kao *callback*.", "timestamp": "2026-06-29T20:33:14.823359"}

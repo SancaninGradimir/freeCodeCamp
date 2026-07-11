@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Kwanza, ondoa kitendakazi chako cha @@INLINE_CODE_B3A93C43_0000@@ na wito la kitendakazi hicho.", "translated_text": "Prvo, ukloni svoju funkciju `@@INLINE_CODE_B3A93C43_0000@@` i poziv te funkcije.", "timestamp": "2026-07-06T19:19:11.181319"}

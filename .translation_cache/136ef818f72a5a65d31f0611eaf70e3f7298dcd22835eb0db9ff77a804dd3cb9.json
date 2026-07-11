@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Ikiwa utaimport sympy na utafafanua x kama kigezo, ni nini kingetokea kutoka kwa msimbo ufuatao?", "translated_text": "Ako importujete `sympy` i definišete `x` kao varijablu, šta bi se desilo sa sledećim kodom?", "timestamp": "2026-07-04T19:37:21.211893"}

@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Ongeza vipengele mwishoni mwa safu ya data kwa kutumia concat badala ya push", "translated_text": "Dodaj elemente na kraj niza podataka koristeći `concat` umesto `push`", "timestamp": "2026-06-28T08:20:31.159938"}

@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Issues should not be replicated in the live system; they are tested on the staging server.", "translated_text": "Problemi ne bi trebalo da se replikuju u produkcionom sistemu; testiraju se na staging serveru.", "timestamp": "2026-06-30T17:34:31.598162"}

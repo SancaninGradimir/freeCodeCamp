@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Gawanya mfuatano wa herufi kuwa safu ya data kwa kutumia njia ya split", "translated_text": "Razdvoj niz karaktera u niz podataka koristeći metodu `split`", "timestamp": "2026-06-28T08:25:51.851457"}

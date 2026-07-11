@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Athari huendeshwa tu wakati props zinabadilika, zikipuuzia state.", "translated_text": "Efekat se izvršava samo kada se menjaju `props`, ignorisujući `state`.", "timestamp": "2026-07-07T18:45:52.499897"}

@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "   - Ikiwa unajaribu kuongeza chaguo tupu, kitendakazi kinapaswa kurudisha ujumbe @@INLINE_CODE_C2E3D306_0000@@", "translated_text": "- Ako pokušate dodati praznu opciju, funkcija bi trebalo da vrati poruku @@INLINE_CODE_C2E3D306_0000@@", "timestamp": "2026-06-29T07:41:47.167331"}

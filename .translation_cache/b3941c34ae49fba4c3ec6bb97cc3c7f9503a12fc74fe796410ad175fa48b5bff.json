@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Kitendakazi chako cha mwitiko kinapaswa kuwa na @@INLINE_CODE_C5532160_0000@@ kama kigezo pekee.", "translated_text": "Tvoja funkcija povratnog poziva mora imati `@@INLINE_CODE_C5532160_0000@@` kao jedini parametar.", "timestamp": "2026-06-30T13:09:36.692679"}

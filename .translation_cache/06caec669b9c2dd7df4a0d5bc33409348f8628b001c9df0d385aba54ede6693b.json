@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Jinsi ya kuunda mshughulikiaji wa njia ya data unaoweza kuunganishwa kwa kutumia app.route()?", "translated_text": "Kako kreirati handler za rutu podataka koji se može povezati koristeći app.route()?", "timestamp": "2026-07-08T01:38:55.318827"}

@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Futa vipengele kutoka kwenye safu ya data kwa kutumia slice badala ya splice", "translated_text": "Ukloni elemente iz niza podataka koristeći `slice` umesto `splice`", "timestamp": "2026-06-28T08:35:17.324187"}

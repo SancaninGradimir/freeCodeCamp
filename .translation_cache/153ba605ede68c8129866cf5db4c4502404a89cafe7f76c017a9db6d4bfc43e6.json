@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Kitendakazi chako cha @@INLINE_CODE_642DE65E_0000@@ kinapaswa kurudisha nambari mbili za kwanza za safu ya data.", "translated_text": "Vaša funkcija @@INLINE_CODE_642DE65E_0000@@ treba da vrati prve dve cifre iz reda podataka.", "timestamp": "2026-06-30T14:15:32.902883"}

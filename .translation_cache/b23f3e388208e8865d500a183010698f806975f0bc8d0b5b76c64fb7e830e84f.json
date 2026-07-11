@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Kitendakazi chako cha mwitiko kinapaswa kuwa na @@INLINE_CODE_85A48FB4_0000@@ kama kigezo cha nne.", "translated_text": "Tvoja callback funkcija treba da ima @@INLINE_CODE_85A48FB4_0000@@ kao četvrti parametar.", "timestamp": "2026-06-30T13:41:02.184698"}

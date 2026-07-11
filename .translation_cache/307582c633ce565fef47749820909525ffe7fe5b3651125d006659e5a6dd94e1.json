@@ -1,0 +1,1 @@
+{"source_lang": "swahili", "target_lang": "serbian", "model": "gemma4:latest", "original_text": "Kama ilivyo kwa getter, setter haipigiwi kama njia bali inatumiwa kama sifa:", "translated_text": "Kao što je slučaj sa getter-ima i setter-ima, nije tretiran kao metoda već se koristi kao svojstvo:", "timestamp": "2026-06-30T11:03:41.628648"}
